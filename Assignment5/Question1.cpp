@@ -114,10 +114,60 @@ public:
 
 int main(){
     List ll;
-    ll.push_front(10);
-    ll.push_front(20);
+    
+    cout << "Menu:" << endl;
+    cout << "1. Push Front" << endl;
+    cout << "2. Push Back" << endl;
+    cout << "3. Pop Front" << endl;
+    cout << "4. Pop Back" << endl;
+    cout << "5. Insert at Position" << endl;
+    cout << "6. Search Element" << endl;
+    cout << "7. Print Linked List" << endl;
+    cout << "8. Exit" << endl;
 
-    ll.print_ll();
+    int choice, val,pos;
+
+    while(true){
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch(choice){
+            case 1:
+                cout << "Enter value: ";
+                cin >> val;
+                ll.push_front(val);
+                break;
+            case 2:
+                cout << "Enter value: ";
+                cin >> val;
+                ll.push_back(val);
+                break;
+            case 3:
+                ll.pop_front();
+                break;
+            case 4:
+                ll.pop_back();
+                break;
+            case 5:
+                cout << "Enter value and position: ";
+                cin >> val >> pos;
+                ll.insert(val, pos);
+                break;
+            case 6:
+                cout << "Enter element to search: ";
+                cin >> val;
+                ll.search(val);
+                break;
+            case 7:
+                ll.print_ll();
+                cout << endl;
+                break;
+            case 8:
+                exit(0);
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    }
 
     return 0;
 }
